@@ -1,0 +1,27 @@
+{
+  "name": "speech-detector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/speech_detector.js",
+  "type": "module",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc && npm run copy-files",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 model/*.onnx dist/model/",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Ian Armour <ianmarmour@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "onnxruntime-web": "^1.16.1"
+  }
+}
